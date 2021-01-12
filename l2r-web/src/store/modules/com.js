@@ -10,7 +10,7 @@ const actions = {
     ReSetAllStates({ commit }, payload) {
         commit("resetAllState", payload);
     },
-    // eslint-disable-next-line
+    // eslint-disable-next-line no-empty-pattern
     SayHelloToServer({ }) {
         return request.SayHelloToServe();
     }

@@ -24,6 +24,7 @@ export default {
     }),
 
     Sayhello() {
+      this.helloResponse='';
       this.SayHelloToServer()
         .then(res => {
           this.helloResponse = res;
