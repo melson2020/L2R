@@ -47,9 +47,11 @@ Message.install = function (Vue) {
     // 获取每个参数的小数的位数
     try {
       t1 = data1.toString().split(".")[1].length;
+    // eslint-disable-next-line no-empty
     } catch (e) { }
     try {
       t2 = data2.toString().split(".")[1].length;
+    // eslint-disable-next-line no-empty
     } catch (e) { }
     // 把所有参数的小数点去掉转为整数
     r1 = Number(data1.toString().replace(".", ""));
@@ -64,9 +66,11 @@ Message.install = function (Vue) {
     // 获取所有参数小数位长度之和
     try {
       m += s1.split(".")[1].length;
+    // eslint-disable-next-line no-empty
     } catch (e) { }
     try {
       m += s2.split(".")[1].length;
+    // eslint-disable-next-line no-empty
     } catch (e) { }
     // 替换掉小数点转为数字相乘再除以10的次幂值
     return (
