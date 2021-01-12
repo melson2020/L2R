@@ -1,18 +1,37 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <div>
+      <el-button type="primary" @click="Sayhello"
+        >Say Hello To Java Sever</el-button
+      >
+    </div>
+    <span>{{ helloResponse }}</span>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
-
+import { mapActions } from "vuex";
 export default {
-  name: "Home",
-  components: {
-    HelloWorld
+  data() {
+    return {
+      helloResponse: ""
+    };
+  },
+  methods: {
+    ...mapActions({
+      SayHelloToServer: "SayHelloToServer"
+    }),
+
+    Sayhello() {
+      this.SayHelloToServer()
+        .then(res => {
+          this.helloResponse = res;
+        })
+        .catch(err => {
+          this.$message.error(err.message);
+        });
+    }
   }
 };
 </script>

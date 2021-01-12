@@ -10,7 +10,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/testweb")
 public class testResource {
     @RequestMapping(value = "/hello")
-    public String test(){
-        return "helloWorld from webserver";
+    public String test() {
+        try {
+            //测试前台maskload 特意睡眠2秒
+            Thread.sleep(2000);
+            return "helloWorld from webserver";
+        } catch (Exception e) {
+            return "Exception catched";
+        }
     }
 }
